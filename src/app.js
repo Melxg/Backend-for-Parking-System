@@ -27,7 +27,7 @@ const allowedOrigins = [
   'http://localhost:5500',
   'http://127.0.0.1:5500',
   // Add your Netlify URL here after deployment
-  'https://dreamy-vacherin-221aae.netlify.app/'
+  'https://vermillion-taffy-41f4a1.netlify.app'
 ];
 
 app.use(cors({
