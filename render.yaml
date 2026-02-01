@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: echopark-backend
+    env: node
+    region: frankfurt
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: echopark-db
+          property: connectionString
+      - key: CHAPA_SECRET_KEY
+        sync: false
+      - key: CHAPA_PUBLIC_KEY
+        sync: false
+
+databases:
+  - name: echopark-db
+    databaseName: echopark
+    user: echopark
+    plan: free
+    region: frankfurt
